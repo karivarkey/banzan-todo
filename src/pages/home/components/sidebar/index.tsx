@@ -17,7 +17,7 @@ interface SideBarProps {
 }
 
 const SideBar = ({ todos, onCategoryChange }: SideBarProps) => {
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(
     new Set()
   );

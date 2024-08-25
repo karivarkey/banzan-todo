@@ -6,6 +6,7 @@ import SideBar from "./components/sidebar";
 import { Todo } from "./types";
 import ThemedDatePicker from "./components/calendar/Themed";
 import EmojiPicker from "emoji-picker-react";
+import toast, { Toaster } from "react-hot-toast";
 
 const Home = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -85,6 +86,7 @@ const Home = () => {
     setNewTodoDueDate(undefined);
     setNewTodoCategory("📚");
     setEmojiPickerVisible(false); // Hide emoji picker after adding todo
+    toast.success("Todo added successfully");
   };
 
   useEffect(() => {
@@ -174,6 +176,24 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Toaster
+        position="bottom-center"
+        reverseOrder={false}
+        gutter={8}
+        containerClassName=""
+        containerStyle={{}}
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 5000,
+          style: {
+            background: "#fff",
+            color: "#363636",
+          },
+
+          // Default options for specific types
+        }}
+      />
     </div>
   );
 };
