@@ -96,7 +96,10 @@ const Home = () => {
 
   return (
     <div className="flex flex-col md:flex-row bg-gray-100 min-h-screen">
-      <SideBar todos={todos} onCategoryChange={handleCategoryChange} />
+      {/* Sidebar is only visible on medium and larger screens */}
+      <div className="hidden md:block md:w-1/4">
+        <SideBar todos={todos} onCategoryChange={handleCategoryChange} />
+      </div>
       <div className="flex-1 p-4 md:p-6 flex flex-col items-center">
         <div className="text-xl py-2 md:py-3">
           Welcome <span className="font-bold">{userName}</span>
