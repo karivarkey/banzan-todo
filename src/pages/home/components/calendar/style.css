@@ -1,0 +1,29 @@
+/* custom-date-picker.css */
+.custom-date-picker {
+  border: 2px solid #4a90e2; /* Customize border color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 8px; /* Padding */
+  font-family: "Arial", sans-serif; /* Font family */
+  background-color: #fff; /* Background color */
+}
+
+.custom-date-picker .react-date-picker__wrapper {
+  background-color: #f8f8f8; /* Background of the input */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners for the input */
+}
+
+.custom-date-picker .react-date-picker__calendar {
+  background-color: #fff; /* Background color of the calendar */
+  border: 1px solid #ddd; /* Border around the calendar */
+  border-radius: 8px; /* Rounded corners for the calendar */
+}
+
+.custom-date-picker .react-date-picker__day--selected {
+  background-color: #4a90e2; /* Selected day background */
+  color: #fff; /* Selected day text color */
+}
+
+.custom-date-picker .react-date-picker__day--today {
+  border: 1px solid #4a90e2; /* Border for today's day */
+}
