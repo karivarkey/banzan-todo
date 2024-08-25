@@ -4,7 +4,7 @@ import app from "../../services/firebase";
 import ToDo from "./components/todo";
 import SideBar from "./components/sidebar";
 import { Todo } from "./types";
-import ThemedDatePicker from "./components/calendar";
+import ThemedDatePicker from "./components/calendar/Themed";
 import EmojiPicker from "emoji-picker-react";
 
 const Home = () => {
@@ -40,8 +40,9 @@ const Home = () => {
   const [filteredTodos, setFilteredTodos] = useState<Todo[]>(todos);
   const [newTodoTitle, setNewTodoTitle] = useState("");
   const [newTodoDescription, setNewTodoDescription] = useState("");
+  console.log(user);
   const [newTodoDueDate, setNewTodoDueDate] = useState<Date | undefined>(
-    new Date()
+    undefined
   );
   const [newTodoCategory, setNewTodoCategory] = useState("📚");
   const [emojiPickerVisible, setEmojiPickerVisible] = useState(false);
@@ -52,6 +53,10 @@ const Home = () => {
     );
     setTodos(updatedTodos);
     setFilteredTodos(updatedTodos);
+  };
+
+  const handleDateChange = (date: Date | null) => {
+    setNewTodoDueDate(date || undefined); // Convert `null` to `undefined` if needed
   };
 
   const handleCategoryChange = (categories: string[]) => {
@@ -135,7 +140,7 @@ const Home = () => {
                 <label className="font-medium">Due Date</label>
                 <ThemedDatePicker
                   selected={newTodoDueDate}
-                  onChange={setNewTodoDueDate}
+                  onChange={handleDateChange}
                   className="w-full"
                 />
               </div>

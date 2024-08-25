@@ -14,7 +14,7 @@ const Login = () => {
     const auth = getAuth(app);
 
     toast.promise(
-      signInWithEmailAndPassword(auth, email, password).then((user) => {
+      signInWithEmailAndPassword(auth, email, password).then(() => {
         navigate("/home");
       }),
       {
